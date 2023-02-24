@@ -188,7 +188,7 @@ mm = '''
 async def op(event):
   global mm
   if not event.is_private:
-    await event.reply("▾∮ ببورە بۆتەکە تەنھا لە تایبەت کاردەکات")
+    await event.reply("⎆┊ ببورە بۆتەکە تەنھا لە تایبەت کاردەکات")
   else:
     await event.reply(mm)
 @client.on(events.NewMessage(pattern="/give"))
@@ -204,42 +204,42 @@ async def op(event):
 
 @client.on(events.NewMessage(pattern="/IQ", func=lambda x: x.is_group))
 async def op(event):
-  await event.reply("▾∮ ببورە بۆتەکە تەنھا لە تایبەت کاردەکات")
+  await event.reply("⎆┊ ببورە بۆتەکە تەنھا لە تایبەت کاردەکات")
 @client.on(events.NewMessage(pattern="/IQ", func = lambda x: x.is_private))
 async def start(event):
   global menu
   async with bot.conversation(event.chat_id) as x:
-    await x.send_message(f"▾∮ لیستی فەرمانی بۆت  :\n{menu}")
+    await x.send_message(f"⎆┊ لیستی فەرمانی بۆت 🎈🤍 :\n{menu}")
     res = await x.get_response()
     r = res.text
     if res.text == "A":
-      await x.send_message("▾∮ کۆدی تێرمۆکس بنێرە ئێستا")
+      await x.send_message("⎆┊ کۆدی تێرمۆکس بنێرە ئێستا🖤")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("▾∮ ببورە ئەم کۆدە بەسەرچووە")
+        return await event.respond("⎆┊ ببورە ئەم کۆدە بەسەرچووە🤍")
       try:
         i = await userchannels(strses.text)
       except:
-        return await event.reply("▾∮ ببورە ئەم کۆدە بەسەرچووە")
+        return await event.reply("⎆┊ ببورە ئەم کۆدە بەسەرچووە🤍")
       if len(i) > 3855:
         file = open("session.txt", "w")
-        file.write(i + "\n\n▾∮ زانیاریەکان بەهۆی بۆت تێرمۆکس)
+        file.write(i + "\n\n⎆┊زانیاریەکان بەهۆی بۆت تێرمۆکس🖤)
         file.close()
         await bot.send_file(event.chat_id, "session.txt")
         system("rm -rf session.txt")
       else:
-        await event.reply(i + "\n\n▾∮ شكرا لاستخدام بوت اختراق تيرمكس")
+        await event.reply(i + "\n\n⎆┊سوپاس بۆ بەکارهێنانی بۆتی هاککردنی تێرمێکس🖤")
     elif res.text == "B":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
+      await x.send_message("⎆┊ کۆدی تێرمۆکس بنێرە ئێستا‌🖤")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
+        return await event.respond(" ")
       i = await userinfo(strses.text)
       await event.reply(i + "\n\n▾∮ شكرا لاستخدام بوت اختراق تيرمكس")
     elif r == "C":
