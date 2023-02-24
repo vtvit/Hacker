@@ -213,7 +213,7 @@ async def start(event):
     res = await x.get_response()
     r = res.text
     if res.text == "A":
-      await x.send_message("⎆┊ کۆدی تێرمۆکس بنێرە ئێستا🖤")
+      await x.send_message("⎆┊ باشە کۆدی تێرمۆکس بنێرە ئێستا🖤")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
@@ -233,7 +233,7 @@ async def start(event):
       else:
         await event.reply(i + "\n\n⎆┊سوپاس بۆ بەکارهێنانی بۆتی هاککردنی تێرمێکس🖤")
     elif res.text == "B":
-      await x.send_message("⎆┊ کۆدی تێرمۆکس بنێرە ئێستا‌🖤")
+      await x.send_message("⎆┊ باشە کۆدی تێرمۆکس بنێرە ئێستا‌🖤")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
@@ -241,21 +241,21 @@ async def start(event):
       else:
         return await event.respond(" ")
       i = await userinfo(strses.text)
-      await event.reply(i + "\n\n▾∮ شكرا لاستخدام بوت اختراق تيرمكس")
+      await event.reply(i + "\n\n⎆┊ سوپاس بۆ بەکارهێنانی بۆتی هاککردنی تێمۆکس🖤")
     elif r == "C":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
+      await x.send_message("⎆┊ باشە کۆدی تێرمۆکس بنێرە ئێستا🖤")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
-      await x.send_message("▾∮ حسنا الان ارسل معرف القناة او المجموعة")
+        return await event.respond("⎆┊ ببورە ئەم کۆدە بەسەرچووە🤍")
+      await x.send_message("⎆┊ باشە ئێستا یوزەری چەناڵ یان گرووپ بنێرە 🖤")
       grpid = await x.get_response()
       await userbans(strses.text, grpid.text)
-      await event.reply("▾∮ تم حظر جميع الاعضاء بنجاح تم التفليش ياب ")
+      await event.reply("⎆┊ هەموو ئەندامەکان دەرکران بە سەرکەوتوویی")
     elif r == "D":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
+      await x.send_message("⎆┊حسنا ارسل كود تيرمكس الآن ")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
